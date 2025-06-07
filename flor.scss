@@ -1,0 +1,167 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #000;
+}
+
+body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.noite {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  filter: blur(0.1vmin);
+  background-image: radial-gradient(
+      ellipse at top,
+      transparent 0%,
+      var(--dark-color)
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      var(--dark-color),
+      rgba(145, 233, 255, 0.2)
+    ),
+    repeating-linear-gradient(
+      220deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    repeating-linear-gradient(
+      189deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    repeating-linear-gradient(
+      148deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+}
+
+.flores {
+  position: relative;
+  transform: scale(0.9);
+}
+
+.flor {
+  position: absolute;
+  bottom: 10vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+
+  --fl-speed: 0.8s;
+
+  &--1 {
+    animation: moving-flor-1 4s linear infinite;
+    .linha__flor {
+      $delay: 0.3s;
+
+      height: 70vmin;
+      animation-delay: $delay;
+
+      &__folha {
+        &--1 {
+          animation: blooming-folha-right var(--fl-speed) 1.6s backwards;
+        }
+
+        &--2 {
+          animation: blooming-folha-right var(--fl-speed) 1.4s backwards;
+        }
+
+        &--3 {
+          animation: blooming-folha-left var(--fl-speed) 1.2s backwards;
+        }
+
+        &--4 {
+          animation: blooming-folha-left var(--fl-speed) 1s backwards;
+        }
+
+        &--5 {
+          animation: blooming-folha-right var(--fl-speed) 1.8s backwards;
+        }
+
+        &--6 {
+          animation: blooming-folha-left var(--fl-speed) 2s backwards;
+        }
+      }
+    }
+  }
+
+  &--2 {
+    left: 50%;
+    transform: rotate(20deg);
+    animation: moving-flower-2 4s linear infinite;
+    .flower__line {
+      height: 60vmin;
+      animation-delay: 0.6s;
+
+      &__folha {
+        &--1 {
+          animation: blooming-folha-right var(--fl-speed) 1.9s backwards;
+        }
+
+        &--2 {
+          animation: blooming-folha-right var(--fl-speed) 1.7s backwards;
+        }
+
+        &--3 {
+          animation: blooming-folha-left var(--fl-speed) 1.5s backwards;
+        }
+
+        &--4 {
+          animation: blooming-folha-left var(--fl-speed) 1.3s backwards;
+        }
+      }
+    }
+  }
+
+  &--3 {
+    left: 50%;
+    transform: rotate(-15deg);
+    animation: moving-flor-3 4s linear infinite;
+    .linha__flor {
+      animation-delay: 0.9s;
+      &__folha {
+        &--1 {
+          animation: blooming-folha-right var(--fl-speed) 2.5s backwards;
+        }
+
+        &--2 {
+          animation: blooming-folha-right var(--fl-speed) 2.3s backwards;
+        }
+
+        &--3 {
+          animation: blooming-folha-left var(--fl-speed) 2.1s backwards;
+        }
+
+        &--4 {
+          animation: blooming-folha-left var(--fl-speed) 1.9s backwards;
+        }
+      }
+    }
+  }
+
